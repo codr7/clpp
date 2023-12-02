@@ -1,0 +1,49 @@
+* add repl
+
+* use native call stack / bindings
+* colon creates pairs
+* comma creates tuples
+* map type names
+* convert type decls
+** (declare ([type] ...)) for args/locals
+** (declaim (type (string) *name*)) for globals
+** (declare (ftype (function (integer list) t) nth)) for functions
+
+(func foo (x, y: Int): Int
+  ((x-+ y)./ 42))
+
+(fexp foo (x, y: Any): Any
+  (x!.or y!))
+
+* use backquote exclusively for quoting
+** @ for unquote
+* allow typed macro args
+** emit when types match
+
+`foo
+
+(macro foo (x, y:Any)
+  `(@x.or @y))
+
+* allow arbitrary syntax in rest arguments
+
+(macro regexp (x*)
+  ...)
+
+(regexp ([a]+).*)
+
+* unify =
+** special case at compile time
+** check values for arrays / hash tables
+
+* unify # (len)
+** special case at compile time
+
+* add vect syntax
+** [1 2 3]
+
+* add hash syntax
+** {1 2 3}
+
+* add debug/release modes
+** generate declaims at compile time
