@@ -1,14 +1,20 @@
-* add bool type
-** bind T
-** add left/right funcs to std
 * add read-sexpr
 ** add sexpr form
-** bind +/- (clpp+/-) in std
+** add emit-sexpr-lisp method
+** lookup name in ns if identifier
+* bind +/- (clpp+/-) in std
+* bind head/tail in std
+** add head/tail methods
+** #'first/rest
+* add bool type
+** bind T
+* add read-vect
+** [1 2 3]
+** add vect type
+** add vect form
 * add list type
 ** 1:2:3:_
 * add read/emit/eval error types with location
-* add read-vect
-** [1 2 3]
 * add func/lambda macro
 ** generate lambda if no id
 ** otherwise defmethod
