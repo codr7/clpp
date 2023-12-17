@@ -8,4 +8,12 @@
   :depends-on ()
   :serial t
   :components ((:file "clpp")
+	       (:file "location")
+	       (:file "deque")
+	       (:file "namespace")
+	       (:file "form")
+	       (:file "read")
+	       (:file "repl")
+	       (:file "type")
+	       (:file "std")
 	       (:file "clpp-tests")))
