@@ -13,7 +13,7 @@
 	    (and pns (find-id pns id))))))
 
 (defun bind-id (ns id val)
-  (setf (gethash id (bindings ns)) (cons (clpp-type-of val) val)))
+  (setf (gethash id (bindings ns)) (cons (clpp-type val) val)))
 
 (defun (setf find-id) (val ns id)
   (bind-id ns id val))

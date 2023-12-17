@@ -1,6 +1,7 @@
 (defpackage clpp
   (:use cl)
-  (:export clpp-type clpp-type-of
+  (:export clpp-type
+	   debug-mode dump-value
 	   find-id location pop-front push-back repl))
 
 (in-package clpp)

@@ -1,10 +1,20 @@
-* add read-number
+* add bool type
+** bind T
+** add left/right funcs to std
 * add read-sexpr
 ** add sexpr form
 ** bind +/- (clpp+/-) in std
+* add list type
+** 1:2:3:_
 * add read/emit/eval error types with location
-
-* colon creates pairs
+* add read-vect
+** [1 2 3]
+* add func/lambda macro
+** generate lambda if no id
+** otherwise defmethod
+* add list type?
+** 1:2:3:_
+** add head/tail to std
 * comma creates tuples
 * convert type decls
 ** (declare ([type] ...)) for args/locals
@@ -14,15 +24,19 @@
 (fexp foo (x, y: Any): Any
   (or x! y!))
 
-* use backquote exclusively for quoting
-** @ for unquote
+* use ' exclusively for quoting
+** add quote reader
+** add quote-value method
+** add sym type
+** add form type
+
 * allow typed macro args
 ** emit when types match
 
 `foo
 
 (macro foo (x, y:Any)
-  `(@x.or @y))
+  `(or @x @y))
 
 * unify =
 ** special case at compile time
@@ -31,8 +45,6 @@
 * unify length
 ** special case at compile time
 
-* add vect syntax
-** [1 2 3]
-
-* add hash syntax
-** {1 2 3}
+* add set/map syntax
+** {1 2 3:4}
+** use rb

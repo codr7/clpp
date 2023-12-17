@@ -18,7 +18,7 @@
 						 (new-location "repl")))
                               (imp (clpp-forms:compile-forms forms ns))
                               (result (funcall imp)))
-			 (dump-value (clpp-type-of result) result out)
+			 (dump-value (clpp-type result) result out)
 			 (terpri out))
                      (ignore ()
                        :report "Ignore condition.")))
