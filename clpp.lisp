@@ -6,3 +6,5 @@
 (in-package clpp)
 
 (define-symbol-macro version 1)
+
+(defvar debug-mode nil)

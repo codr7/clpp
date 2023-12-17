@@ -24,9 +24,6 @@
 	       (error "Unknown identifier: ~a" id))))
     (emit-identifier-lisp (identifier-name id) (first v) (rest v) args ns out)))
 
-(defvar debug-mode nil)
-(defvar emit-speed 0)
-
 (defun compile-forms (in ns)
   (let (out)
     (tagbody
@@ -42,7 +39,7 @@
 
     (compile nil `(lambda ()
                     (declare (optimize (debug ,(if debug-mode 3 0))
-                                       (speed ,(floor emit-speed 3))
-                                       (safety ,(floor (- 9 emit-speed) 3))))
+                                       (speed ,(if debug-mode 0 3))
+                                       (safety ,(if debug-mode 0 3))))
                     ,@out))))
 
